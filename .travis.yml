@@ -24,10 +24,10 @@ before_install:
   - sudo cp nginx.conf /etc/nginx/nginx.conf
   - sudo service nginx restart
   - sudo aptitude install apache2-utils
+  - sudo cp test.php /usr/share/nginx/html/test.php
 before_script:
   - composer install
   - pecl list
-  - wget 127.0.0.1/index.php
 
 script:
   - ab -c 40 -n 1000 http://localhost/test.php
