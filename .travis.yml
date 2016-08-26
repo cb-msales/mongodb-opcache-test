@@ -1,0 +1,39 @@
+language: php
+php: 7
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install php-pear
+  - pecl list
+  - pecl channel-update pecl.php.net
+  - pecl install mongodb
+  - php -m | grep mongo
+  - php --version
+  - sudo apt-get install software-properties-common
+  - echo "\n" | sudo add-apt-repository ppa:ondrej/php
+  - sudo apt-get update
+  - sudo apt-get install php7.0-fpm php7.0-curl php7.0-cli php7.0-mbstring apache2-utils git php7.0-dev build-essential php7.0-pgsql php7.0-json php7.0-gd php7.0-odbc
+
+
+# mongodb extension
+#  - apt-get install libssl-dev libcurl4-openssl-dev
+#  - printf "\n" | pecl install mongodb
+#  - sudo less /etc/php/7.0/fpm/php.ini
+  - echo "extension=mongodb.so" | sudo tee --append /etc/php/7.0/fpm/php.ini > /dev/null
+  - sudo apt-get install nginx
+  - sudo cat /etc/nginx/nginx.conf
+  - sudo cp nginx.conf /etc/nginx/nginx.conf
+  - sudo service nginx restart
+  - sudo aptitude install apache2-utils
+before_script:
+  - composer install
+  - pecl list
+  - wget 127.0.0.1/index.php
+
+script:
+  - ab -c 40 -n 1000 http://localhost/test.php
+  - cat /tmp/mongodb-errors.log
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
