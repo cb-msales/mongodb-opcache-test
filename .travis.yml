@@ -29,6 +29,7 @@ before_install:
   - sudo aptitude install apache2-utils
   - sudo cp test.php /usr/share/nginx/webcontent/test.php
   - sudo cp composer.* /usr/share/nginx/webcontent/
+  - cat /var/log/nginx/error.log
 before_script:
   - cd /usr/share/nginx/webcontent/
   - ls -al
