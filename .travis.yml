@@ -27,7 +27,9 @@ before_install:
   - sudo mkdir -p /usr/share/nginx/webcontent
   - sudo chmod 777 /usr/share/nginx/webcontent
   - sudo cp test.php /usr/share/nginx/webcontent/test.php
+  - sudo cp composer.* /usr/share/nginx/webcontent/
 before_script:
+  - cd /usr/share/nginx/webcontent/
   - composer install
   - pecl list
 
