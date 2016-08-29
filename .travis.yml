@@ -30,7 +30,9 @@ before_install:
   - sudo cp composer.* /usr/share/nginx/webcontent/
 before_script:
   - cd /usr/share/nginx/webcontent/
+  - ls -al
   - composer install
+  - ls -al
   - pecl list
 
 script:
