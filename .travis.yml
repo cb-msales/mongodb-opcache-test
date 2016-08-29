@@ -33,6 +33,7 @@ before_script:
 
 script:
   - ab -c 40 -n 1000 http://localhost/test.php
+  - wget http://localhost/test.php
   - cat /tmp/mongodb-errors.log
 
 notifications:
