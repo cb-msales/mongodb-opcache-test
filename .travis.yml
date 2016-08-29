@@ -14,7 +14,7 @@ before_install:
   - sudo apt-get install php7.0-fpm php7.0-curl php7.0-cli php7.0-mbstring apache2-utils git php7.0-dev build-essential php7.0-pgsql php7.0-json php7.0-gd php7.0-odbc
   - sudo apt-get install -y --force-yes mongodb-org
   - sudo service php7.0-fpm restart
-
+  - ls -al /var/run/
 
 # mongodb extension
 #  - apt-get install libssl-dev libcurl4-openssl-dev
