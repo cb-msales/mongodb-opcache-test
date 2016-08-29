@@ -40,6 +40,7 @@ before_script:
   - composer install
   - ls -al
   - pecl list
+  - php7.0-fpm -i
 
 script:
   - php /usr/share/nginx/webcontent/test.php
