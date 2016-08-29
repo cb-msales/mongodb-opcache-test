@@ -4,6 +4,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 $test = ['test' => ['$in' => [10, 12]]];
 
+phpinfo();
+
 $client = new MongoDB\Client();
 $client->selectCollection('a','b')->find($test);
 
