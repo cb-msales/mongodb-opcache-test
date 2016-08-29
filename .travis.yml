@@ -24,7 +24,9 @@ before_install:
   - sudo cp nginx.conf /etc/nginx/nginx.conf
   - sudo service nginx restart
   - sudo aptitude install apache2-utils
-  - sudo cp test.php /usr/share/nginx/html/test.php
+  - sudo mkdir -r /usr/share/nginx/webcontent
+  - sudo chmod 777 /usr/share/nginx/webcontent
+  - sudo cp test.php /usr/share/nginx/webcontent/test.php
 before_script:
   - composer install
   - pecl list
