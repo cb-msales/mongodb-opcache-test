@@ -23,6 +23,7 @@ before_install:
 #  - printf "\n" | pecl install mongodb
 #  - sudo less /etc/php/7.0/fpm/php.ini
   - echo "extension=mongodb.so" | sudo tee --append /etc/php/7.0/fpm/php.ini > /dev/null
+  - cat /etc/php/7.0/fpm/php.ini
   - sudo apt-get install nginx
   - sudo mkdir -p /usr/share/nginx/webcontent
   - sudo chmod 777 /usr/share/nginx/webcontent
