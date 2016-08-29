@@ -16,6 +16,7 @@ before_install:
   - sudo service php7.0-fpm restart
   - ls -al /var/run/
   - ls -al /var/run/php/
+  - cat /etc/php/7.0/fpm/pool.d/www.conf | grep listen
 
 # mongodb extension
 #  - apt-get install libssl-dev libcurl4-openssl-dev
