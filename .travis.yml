@@ -35,6 +35,7 @@ before_install:
   - sudo cp composer.* /usr/share/nginx/webcontent/
   - cat /var/log/nginx/error.log
   - sudo service php7.0-fpm restart
+  - mongod --version
 before_script:
   - cd /usr/share/nginx/webcontent/
   - ls -al
