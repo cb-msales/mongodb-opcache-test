@@ -5,6 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 $test = ['test' => ['$in' => [10, 12]]];
 
 phpinfo();
+$manager = new MongoDB\Driver\Manager("mongodb://localhost");
 
 $client = new MongoDB\Client();
 $client->selectCollection('a','b')->find($test);
