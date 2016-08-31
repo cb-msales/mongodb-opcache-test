@@ -7,7 +7,7 @@ before_install:
   - pecl channel-update pecl.php.net
   - pecl install mongodb
   - cp /tmp/pear/install/pear-build-travisuhWaKN/install-mongodb-1.1.8/home/travis/.phpenv/versions/7.0.10/lib/php/extensions/no-debug-zts-20151012/mongodb.so /usr/lib/php/20151012/mongodb.so
-  - php7 -m
+#  - php7 -m
 #  - php --version
   - sudo apt-get install software-properties-common
   - echo "\n" | sudo add-apt-repository ppa:ondrej/php
