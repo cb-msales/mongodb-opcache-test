@@ -6,7 +6,7 @@ before_install:
 #  - pecl list
   - pecl channel-update pecl.php.net
   - pecl install mongodb
-  - php -m | grep mongo
+  - php7.0 -m
 #  - php --version
   - sudo apt-get install software-properties-common
   - echo "\n" | sudo add-apt-repository ppa:ondrej/php
