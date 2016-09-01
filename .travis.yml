@@ -21,13 +21,13 @@ before_install:
   - ls -al /usr/lib/php/20151012
   - sudo cp /home/travis/.phpenv/versions/7.0.10/lib/php/extensions/no-debug-zts-20151012/mongodb.so /usr/lib/php/20151012/mongodb.so
   - ls -al /usr/lib/php/20151012
-  - sudo service php7.0-fpm restart
 
 # mongodb extension
 #  - apt-get install libssl-dev libcurl4-openssl-dev
 #  - printf "\n" | pecl install mongodb
 #  - sudo less /etc/php/7.0/fpm/php.ini
   - echo "extension=mongodb.so" | sudo tee --append /etc/php/7.0/fpm/php.ini > /dev/null
+  - sudo service php7.0-fpm restart
   - cat /etc/php/7.0/fpm/php.ini
   - sudo apt-get install nginx
   - sudo mkdir -p /usr/share/nginx/webcontent
