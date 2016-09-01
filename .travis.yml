@@ -20,6 +20,7 @@ before_install:
 #  - cat /etc/php/7.0/fpm/pool.d/www.conf | grep listen
   - ls -al /usr/lib/php/20151012
   - sudo cp /home/travis/.phpenv/versions/7.0.10/lib/php/extensions/no-debug-zts-20151012/mongodb.so /usr/lib/php/20151012/mongodb.so
+  - ls -al /usr/lib/php/20151012
 
 # mongodb extension
 #  - apt-get install libssl-dev libcurl4-openssl-dev
