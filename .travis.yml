@@ -4,9 +4,6 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install php-pear
 #  - pecl list
-  - pecl channel-update pecl.php.net
-  - pecl install mongodb
-  - sudo find / -name mongodb.so
 #  - php7 -m
 #  - php --version
   - sudo apt-get install software-properties-common
@@ -18,6 +15,9 @@ before_install:
 #  - ls -al /var/run/
 #  - ls -al /var/run/php/
 #  - cat /etc/php/7.0/fpm/pool.d/www.conf | grep listen
+  - pecl channel-update pecl.php.net
+  - pecl install mongodb
+  - sudo find / -name mongodb.so
   - ls -al /usr/lib/php/20151012
   - sudo cp /home/travis/.phpenv/versions/7.0.10/lib/php/extensions/no-debug-zts-20151012/mongodb.so /usr/lib/php/20151012/mongodb.so
   - ls -al /usr/lib/php/20151012
