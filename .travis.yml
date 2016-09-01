@@ -48,6 +48,7 @@ before_script:
   - ls -al
   - pecl list
   - php-fpm7.0 -i
+  - php-fpm7.0 -m
 
 script:
   - php /usr/share/nginx/webcontent/test.php
