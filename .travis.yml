@@ -27,7 +27,7 @@ before_install:
 #  - apt-get install libssl-dev libcurl4-openssl-dev
 #  - printf "\n" | pecl install mongodb
 #  - sudo less /etc/php/7.0/fpm/php.ini
-  - echo "zend_extension=mongodb.so" | sudo tee --append /etc/php/7.0/fpm/php.ini > /dev/null
+  - echo "zend_extension_ts=mongodb.so" | sudo tee --append /etc/php/7.0/fpm/php.ini > /dev/null
   - php-fpm7.0 -m
   - sudo service php7.0-fpm restart
   - cat /etc/php/7.0/fpm/php.ini
