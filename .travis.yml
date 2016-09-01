@@ -14,12 +14,12 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install php7.0-fpm php7.0-curl php7.0-cli php7.0-mbstring apache2-utils git php7.0-dev build-essential php7.0-pgsql php7.0-json php7.0-gd php7.0-odbc
   - sudo apt-get install -y --force-yes mongodb-org
-  - cp /home/travis/.phpenv/versions/7.0.10/lib/php/extensions/no-debug-zts-20151012/mongodb.so /usr/lib/php/20151012/mongodb.so
   - sudo service php7.0-fpm restart
 #  - ls -al /var/run/
 #  - ls -al /var/run/php/
 #  - cat /etc/php/7.0/fpm/pool.d/www.conf | grep listen
   - ls -al /usr/lib/php/20151012
+  - sudo cp /home/travis/.phpenv/versions/7.0.10/lib/php/extensions/no-debug-zts-20151012/mongodb.so /usr/lib/php/20151012/mongodb.so
 
 # mongodb extension
 #  - apt-get install libssl-dev libcurl4-openssl-dev
