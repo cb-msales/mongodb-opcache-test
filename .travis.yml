@@ -41,6 +41,8 @@ before_install:
   - cat /var/log/nginx/error.log
   - sudo service php7.0-fpm restart
   - mongod --version
+  - sudo touch /tmp/mongodb-errors.log
+  - sudo chmod 777 /tmp/mongodb-errors.log
 before_script:
   - cd /usr/share/nginx/webcontent/
   - ls -al
