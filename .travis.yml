@@ -12,6 +12,7 @@ before_install:
   - sudo apt-get install php7.0-fpm php7.0-curl php7.0-cli php7.0-mbstring apache2-utils git php7.0-dev build-essential php7.0-pgsql php7.0-json php7.0-gd php7.0-odbc
   - sudo apt-get install -y --force-yes mongodb-org
   - sudo service php7.0-fpm restart
+  - php-fpm7.0 -m
 #  - ls -al /var/run/
 #  - ls -al /var/run/php/
 #  - cat /etc/php/7.0/fpm/pool.d/www.conf | grep listen
@@ -26,7 +27,8 @@ before_install:
 #  - apt-get install libssl-dev libcurl4-openssl-dev
 #  - printf "\n" | pecl install mongodb
 #  - sudo less /etc/php/7.0/fpm/php.ini
-  - echo "extension=mongodb.so" | sudo tee --append /etc/php/7.0/fpm/php.ini > /dev/null
+  - echo "zend_extension=mongodb.so" | sudo tee --append /etc/php/7.0/fpm/php.ini > /dev/null
+  - php-fpm7.0 -m
   - sudo service php7.0-fpm restart
   - cat /etc/php/7.0/fpm/php.ini
   - sudo apt-get install nginx
