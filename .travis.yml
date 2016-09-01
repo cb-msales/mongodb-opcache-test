@@ -52,7 +52,7 @@ before_script:
 
 script:
   - php /usr/share/nginx/webcontent/test.php
-#  - ab -c 40 -n 1000 http://localhost/test.php
+  - ab -c 40 -n 10 http://localhost/test.php
   - wget http://localhost/test.php
   - cat /var/log/nginx/error.log
   - cat /var/log/nginx/access.log
