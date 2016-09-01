@@ -4,6 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $test = ['test' => ['$in' => [10, 12]]];
 
+die('success');
 //phpinfo();
 $manager = new MongoDB\Driver\Manager("mongodb://localhost");
 
